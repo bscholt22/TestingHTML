@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+
+			function clickBtn(){
+				document.getElementById("myParagraph").innerHTML="Hello World";
+			}
+
+			function clickBtn2(){
+				document.getElementById("myParagraph").innerText="World of worlds";
+			}
+
+			urlStr = window.location.href;
+			urlParts = urlStr.split("?");
+
+			function clickBtn3(){
+				if (urlParts==null){}
+				else{
+					urlParts_spl = urlParts[1].split(";");
+					document.getElementById("myParagraph").innerText=urlParts_spl[0].split("=")[0]+"="+urlParts_spl[0].split("=")[1];
+				}
+			}
+
+		</script>
+	</head>
+	<body>
+		<h1>JavaScript 2</h1>
+		<p id="myParagraph">This is a paragraph</p>
+		<select>
+			<option>Opt 1</option>
+			<option>Opt 2</option>
+			<option>Opt 3</option>
+		</select>
+		<br>
+		<a href="?hello=world">Link</a>
+		<br>
+		<button onclick="clickBtn();">Button</button>
+
+		<button onclick="clickBtn2();">Button2</button>
+
+		<button onclick="clickBtn3();">Button3</button>
+		
+		<div>
+			<iframe width="1200em" height="500em" src="index.html"></iframe>
+		</div>
+		
+
+	</body>
+</html>
